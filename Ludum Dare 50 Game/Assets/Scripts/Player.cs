@@ -11,10 +11,14 @@ public class Player : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb;
 
+    public float timeRemaining = 100;
+
     public Image heart1;
     public Image heart2;
     public Image heart3;
     public Image heart4;
+    public Text goldNum;
+    public Text timer;
 
     public int gold = 0;
 
@@ -28,6 +32,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        goldNum.text = gold.ToString();
         if(health == 0){
             heart1.enabled = false;
             heart2.enabled = false;
@@ -58,6 +63,8 @@ public class Player : MonoBehaviour
             heart3.enabled = true;
             heart4.enabled = true;
         }
+        timeRemaining -= Time.deltaTime;
+        timer.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
         if (this.gameObject == null)
         {
             Debug.Log("Game over");
