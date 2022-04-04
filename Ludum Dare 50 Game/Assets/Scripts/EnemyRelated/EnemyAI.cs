@@ -157,6 +157,7 @@ public class EnemyAI : MonoBehaviour
     private void checkCurrentHealth()
     {
         if (health <= 0) {
+            targetObject.GetComponent<Player>().goldIncrement();
             StopAllCoroutines();
             for (int i = 0; i < patrolPath.Length; i++) {
                 Destroy(patrolPath[i]);

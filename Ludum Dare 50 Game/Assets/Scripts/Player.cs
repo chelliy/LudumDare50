@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public Image heart3;
     public Image heart4;
 
+    public int gold = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,7 @@ public class Player : MonoBehaviour
             UnityEditor.EditorApplication.isPlaying = false;
             Application.Quit(0);
         }
+
 
     }
 
@@ -116,6 +119,10 @@ public class Player : MonoBehaviour
         deathAnim();
         StopAllCoroutines();
         Destroy(this.gameObject);
+    }
+
+    public void goldIncrement() {
+        gold++;
     }
 
 }
