@@ -123,9 +123,9 @@ MonoBehaviour:
   shootTime: 2
   portalTime: 10
   player: {fileID: 0}
-  bulletForce: 150
+  bulletForce: 100
   anim: {fileID: 479389893200945734}
-  health: 5
+  health: 50
   bulletShootPoint: {fileID: 7127486792300020987}
 --- !u!58 &479389893200945738
 CircleCollider2D:

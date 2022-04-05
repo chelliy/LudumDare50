@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public int health = 3;
-    public int damage;
+    public int damage = 1;
     public AudioSource audio;
     public Animator anim;
     public Rigidbody2D rb;
@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     public GameObject item2;
     public GameObject item3;
     public GameObject buff;
+
+    public GameObject weapon;
 
     public int gold = 0;
 
@@ -155,8 +157,10 @@ public class Player : MonoBehaviour
 
     public void damgeIncrement(int num){
         if(gold >= num){
+            gold -= num;
             item1.SetActive(false);
             buff.SetActive(true);
+            weapon.GetComponent<Gun>().damage = weapon.GetComponent<Gun>().damage + 1;
         }
 
     }

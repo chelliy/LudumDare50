@@ -7,6 +7,7 @@ public class bossFightTriggerController : MonoBehaviour
     // Start is called before the first frame update
     public GameObject boss;
     public GameObject enemyCreator;
+    public GameObject shopCollider;
     void Start()
     {
     }
@@ -24,6 +25,8 @@ public class bossFightTriggerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E)) {
                 enemyCreator.GetComponent<EnemyGeneration>().destroy();
                 boss.SetActive(true);
+
+                Destroy(shopCollider);
 
                 StopAllCoroutines();
                 Destroy(this.gameObject);
