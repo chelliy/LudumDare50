@@ -20,6 +20,11 @@ public class Player : MonoBehaviour
     public Text goldNum;
     public Text timer;
 
+    public GameObject item1;
+    public GameObject item2;
+    public GameObject item3;
+    public GameObject buff;
+
     public int gold = 0;
 
     // Start is called before the first frame update
@@ -65,7 +70,7 @@ public class Player : MonoBehaviour
         }
         timeRemaining -= Time.deltaTime;
         timer.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(timeRemaining / 60), Mathf.FloorToInt(timeRemaining % 60));
-        if (this.gameObject == null)
+        if (this.gameObject == null || timeRemaining <= 0)
         {
             Debug.Log("Game over");
             StopAllCoroutines();
@@ -131,5 +136,30 @@ public class Player : MonoBehaviour
     public void goldIncrement() {
         gold++;
     }
+
+    public void timeIncrement(int num) {
+        if(gold >= num){
+            timeRemaining+=20;
+            gold-=num;
+            item2.SetActive(false);
+        }
+    }
+
+    public void healthIncrement(int num){
+        if(gold >= num){
+            health++;
+            gold-=num;
+            item3.SetActive(false);
+        }
+    }
+
+    public void damgeIncrement(int num){
+        if(gold >= num){
+            item1.SetActive(false);
+            buff.SetActive(true);
+        }
+
+    }
+
 
 }
