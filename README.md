@@ -4,4 +4,4 @@ My Contribution to the game is:
 
 Enemy Generation, Enemy AI, Enemy related builds and animation, map related set up.
 
-You can find our game page here:https://ldjam.com/events/ludum-dare/50/time-well.
+You can find our game page here:[https://ldjam.com/events/ludum-dare/50/time-well.](https://cornerseatstudios.itch.io/time-well)https://cornerseatstudios.itch.io/time-well
